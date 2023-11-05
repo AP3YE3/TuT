@@ -2,6 +2,7 @@
 23/11/02 學習使用Notion(目前已有基本架構)
 23/11/03 學習GITHUB以及VSCODE相關知識
 23/11/04 透過freeCodeCamp學習製作基礎網站
+23/11/05 透過freeCodeCamp學習CSS基礎使用
 ---
 各類詳細筆記等在Notion
 每天記得更新進度以及上傳GitHub
