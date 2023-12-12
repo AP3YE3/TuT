@@ -1,55 +1,35 @@
-// This is an in-line comment.
+const recordCollection = {
+    2548: {
+      albumTitle: 'Slippery When Wet',
+      artist: 'Bon Jovi',
+      tracks: ['Let It Rock', 'You Give Love a Bad Name']
+    },
+    2468: {
+      albumTitle: '1999',
+      artist: 'Prince',
+      tracks: ['1999', 'Little Red Corvette']
+    },
+    1245: {
+      artist: 'Robert Palmer',
+      tracks: []
+    },
+    5439: {
+      albumTitle: 'ABBA Gold'
+    }
+  };
 
-/* This is a multi-line comment */
-
-var myName;
-myName = 7;
-
-var myVar;
-myVar = 5;
-var myNum;
-myNum = myVar;
-
-var a = 9;
-
-var myFirstName = "myFirstName";
-var myLastName = "myLastName";
-
-// 只修改這一行下面的代碼
-var a;
-var b;
-var c;
-
-a = 5;
-b = 10;
-c = "I am a"
-// 只修改這一行上面的代碼
-
-a = a + 1;
-b = b + 5;
-c = c + " String!";
-
-// 變量聲明
-var StUdLyCapVaR;
-var properCamelCase;
-var TitleCaseOver;
-var studlyCapVar;
-var titleCaseOver;
-
-// 變量賦值
-studlyCapVar = 10;
-properCamelCase = "A String";
-titleCaseOver = 9000;
-
-let catName = "Oliver";
-let catSound = "Meow!";
-
-const FCC = "freeCodeCamp"; // 修改這一行
-let fact = "is cool!"; // 修改這一行
-fact = "is awesome!";
-console.log(FCC, fact); // 修改這一行
-
-const sum = 10 + 10;
-const difference = 45 - 33;
-const product = 8 * 10;
-const quotient = 66 / 33;
+  function updateRecords(records, id, prop, value) {
+    if (value === ""){
+      delete records[id][prop];
+    } else if (prop !== "tracks" && value !== "") {
+      records[id][prop] = value;
+    } else if (prop === "tracks" && value !== "") {
+      if (records[id].hasOwnProperty("tracks") === false) {
+        records[id][prop] = [];
+      }
+      records[id][prop].push(value);
+    }
+    return records;
+  }
+  
+  updateRecords(recordCollection, 5439, 'artist', 'ABBA');
